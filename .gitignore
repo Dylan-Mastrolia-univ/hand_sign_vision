@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# dataset files
+dataset_eval/
+dataset_train/
+#optional
+dataset_test/
+
+
 # Distribution / packaging
 .Python
 build/
