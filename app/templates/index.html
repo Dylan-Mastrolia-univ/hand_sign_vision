@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>HandSign AI - Reconnaissance de Gestes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/static/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 HandSign AI</h1>
+      <p class="subtitle">Reconnaissance de gestes en temps réel</p>
+    </header>
+
+    <main>
+      <div class="video-container">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
+        <div class="video-overlay" id="videoOverlay">
+          <div class="overlay-content">
+            <span class="camera-icon">📷</span>
+            <p>Cliquez sur "Démarrer" pour activer la caméra</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="controls-card">
+          <h3>🎮 Contrôles</h3>
+          <div class="button-group">
+            <button id="btnStart" class="btn btn-primary">
+              <span class="btn-icon">▶</span>
+              Démarrer
+            </button>
+            <button id="btnStop" class="btn btn-secondary" disabled>
+              <span class="btn-icon">⏸</span>
+              Arrêter
+            </button>
+          </div>
+
+          <div class="control-item">
+            <label for="interval">⚡ Intervalle de prédiction</label>
+            <div class="input-group">
+              <input id="interval" type="range" min="100" max="1000" step="50" value="300" />
+              <span id="intervalValue" class="input-value">300 ms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-card">
+          <h3>🎯 Résultats</h3>
+          <div class="top-result">
+            <div class="result-label">Meilleure prédiction</div>
+            <div id="top1" class="result-value">En attente...</div>
+          </div>
+
+          <div class="top-results">
+            <div class="result-label">Top 3</div>
+            <div id="topk" class="topk-list"></div>
+          </div>
+        </div>
+
+        <div class="status-card">
+          <div id="status" class="status-text">
+            <span class="status-icon">⚪</span>
+            <span>Prêt à démarrer</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
+

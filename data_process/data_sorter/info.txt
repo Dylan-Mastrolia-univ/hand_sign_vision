@@ -1,0 +1,3 @@
+You can put here all image files containing data, organized in folders named by letter.
+
+For example, all images representing the letter "a" should be placed in the folder named "a"
